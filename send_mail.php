@@ -1,6 +1,6 @@
 <?php
 // Include PHPMailer autoloader
-include('../SMTP/PHPMailerAutoload.php');
+include('SMTP/PHPMailerAutoload.php');
 
 $to = 'naveenkr153@gmail.com';
 $subject = $_REQUEST['subject'];
