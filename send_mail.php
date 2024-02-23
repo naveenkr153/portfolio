@@ -47,5 +47,5 @@ if ($mail->send()) {
 //     echo "<script>alert('Sending mail failer!');</script>";
 // }
 
-header("Location: index.php");
+header("Location: index.html");
 ?>
