@@ -1,16 +1,16 @@
 <?php
-
-echo "<script>alert('E-mail service is disabled by Naveen'); window.location.href = 'index.html';</script>"; exit;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// echo "<script>alert('E-mail service is disabled by Naveen'); window.location.href = 'index.html';</script>"; exit;
 
 // Include PHPMailer autoloader
 include('SMTP/PHPMailerAutoload.php');
 
 $to = 'naveenkr153@gmail.com';
-$subject = $_REQUEST['subject'];
-$message = $_REQUEST['text_area'];
-$name = $_REQUEST['name'];
-$from = strtolower($_REQUEST['email']);
-// $headers = 'From: ' . $_REQUEST['email'] . "\r\n" . 'Name: ' . $_REQUEST['name'] . "\r\n";
+$subject = $_POST['subject'];
+$message = $_POST['text_area'];
+$name = $_POST['name'];
+$from = strtolower($_POST['email']);
+// $headers = 'From: ' . $_POST['email'] . "\r\n" . 'Name: ' . $_POST['name'] . "\r\n";
 $new_msg = 'From: ' . $from . "<br><br>" . $message;
 // echo $new_msg. "<br>";
 // echo $name. "<br>" . $from. "<br>" . $subject . "<br>" . $message . "<br>" . $to;
@@ -51,4 +51,5 @@ if ($mail->send()) {
 // }
 
 header("Location: index.html");
+}
 ?>
